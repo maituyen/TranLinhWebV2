@@ -1,0 +1,82 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>a4df7f0a-c837-49cd-b9be-7d7f9e20a424</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'https' " />
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <None Remove="Newtonsoft.Json" />
+    <None Remove="Microsoft.EntityFrameworkCore" />
+    <None Remove="SlugGenerator" />
+    <None Remove="System.IdentityModel.Tokens.Jwt" />
+    <None Remove="Microsoft.IdentityModel.Tokens" />
+    <None Remove="Microsoft.DotNet.Scaffolding.Shared" />
+    <None Remove="Microsoft.OpenApi" />
+    <None Remove="OpenAI" />
+    <None Remove="OpenAI.Gpt3" />
+    <None Remove="OpenAI-DotNet" />
+    <None Remove="Google.Apis.AnalyticsReporting.v4" />
+    <None Remove="MailKit" />
+    <None Remove="Microsoft.Data.SqlClient" />
+    <None Remove="Dapper" />
+    <None Remove="Google.Apis.PeopleService.v1" />
+    <None Remove="Telegram.Bot" />
+    <None Remove="vng.zalo.ZaloDotNetSDK" />
+    <None Remove="Microsoft.EntityFrameworkCore.SqlServer" />
+    <None Remove="Microsoft.EntityFrameworkCore.Design" />
+    <None Remove="Microsoft.EntityFrameworkCore.Tools" />
+    <None Remove="Google.Apis.Drive.v3" />
+    <None Remove="ttl1601.ZaloDotNetSDK" />
+    <None Remove="Microsoft.AspNetCore.Authentication.JwtBearer" />
+    <None Remove="Swashbuckle.AspNetCore.SwaggerUI" />
+    <None Remove="Swashbuckle.AspNetCore" />
+    <None Remove="Pages\Admin\" />
+    <None Remove="Pages\Admin\hastags\" />
+    <None Remove="Pages\Admin\danhmuc\" />
+    <None Remove="Pages\Admin\sanpham\" />
+    <None Remove="Google.Apis.Auth" />
+    <None Remove="Google.Apis" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="7.0.8" />
+    <PackageReference Include="SlugGenerator" Version="2.0.2" />
+    <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.31.0" />
+    <PackageReference Include="Microsoft.IdentityModel.Tokens" Version="6.31.0" />
+    <PackageReference Include="Microsoft.DotNet.Scaffolding.Shared" Version="7.0.7" />
+    <PackageReference Include="Microsoft.OpenApi" Version="1.6.5" />
+    <PackageReference Include="Google.Apis.AnalyticsReporting.v4" Version="1.61.0.2484" />
+    <PackageReference Include="MailKit" Version="4.1.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.1" />
+    <PackageReference Include="Dapper" Version="2.0.143" />
+    <PackageReference Include="Google.Apis.PeopleService.v1" Version="1.61.0.3093" />
+    <PackageReference Include="Telegram.Bot" Version="19.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="7.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.8">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Google.Apis.Drive.v3" Version="1.61.0.3082" />
+    <PackageReference Include="ttl1601.ZaloDotNetSDK" Version="6.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.8" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="6.5.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
+    <PackageReference Include="Google.Apis.Auth" Version="1.61.0" />
+    <PackageReference Include="Google.Apis" Version="1.61.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Pages\Admin\" />
+    <Folder Include="Pages\Admin\hastags\" />
+    <Folder Include="Pages\Admin\danhmuc\" />
+    <Folder Include="Pages\Admin\sanpham\" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,299 @@
+﻿@page "/admin/san-pham/form"
+@model MyProject.Pages.Admin.sanpham._formModel
+@{
+    Layout = "_LayoutAdmin";
+}
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 p-5">
+            <div class="card">
+                <div class="card-header">
+                    Thông tin chung
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Tên sản phẩm</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Url</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header">
+                    Giá sản phẩm
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="rol-lg-6">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Giá nhập</label>
+                            </div>
+                        </div>
+                        <div class="rol-lg-6">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Giá bán</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header">
+                    Hình ảnh
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        ....
+                    </div>
+                </div>
+            </div>
+            <div class="card mt-5">
+                <div class="card-header mb-3">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            Thuộc tính sản phẩm
+                        </div>
+                        <div class="col-lg-6 float-right">
+                            <span class="form-check form-switch" style=" text-align: right; float: right; right: 0px; position: absolute;">
+                                <input class="form-check-input" type="checkbox" id="ChangeAttr" onclick="ChangeAttr()">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-subtitle mb-2 text-muted">Thêm mới thuộc tính giúp sản phẩm có nhiều lựa chọn, như dung lượng, màu sắc, phân loại</div>
+                </div>
+               <script>
+                   function ChangeAttr() {
+                       if ($('#ChangeAttr').prop('checked')) {
+                           $('.listAttr').show();
+                       } else {
+                           $('.listAttr').hide();
+                       }
+                   }
+                   function AddAttr() {
+                       if (!$('#ChangeAttr').prop('checked')) return;
+                       var index = ($('#listAttr').find('.row').length + 1);
+                       $('#listAttr').append(
+                           `
+                                <div class="row" data-key="attr-1">
+                                    <div class="col-lg-3">
+                                        <div class="floating-label">
+                                            <input class="floating-input name" type="text" placeholder="" value="Màu sắc">
+                                            <span class="highlight"></span>
+                                            <label>Màu sắc</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-8">
+                                        <div class="floating-label">
+                                            <input class="floating-input value" type="text" placeholder=" ">
+                                            <span class="highlight"></span>
+                                            <label>Giá trị</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-1">
+                                        <i class="bi bi-x-circle-fill pointer text-danger"></i>
+                                    </div>
+                                </div>
+                            `
+                       )
+                   }
+               </script>
+                <div class="card-body mb-3">
+                    <div id="listAttr" class="listAttr" style="display:none">
+                        <div class="row" data-key="attr-1">
+                            <div class="col-lg-3">
+                                <div class="floating-label">
+                                    <input class="floating-input name" type="text" placeholder="" value="Dung lượng">
+                                    <span class="highlight"></span>
+                                    <label>Thuộc tính</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-8">
+                                <div class="floating-label">
+                                    <input class="floating-input value" type="text" placeholder=" ">
+                                    <span class="highlight"></span>
+                                    <label>Giá trị</label>
+                                </div>
+                            </div>
+                            <div class="col-lg-1">
+                                <i class="bi bi-x-circle-fill pointer text-danger"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row listAttr" style="display:none">
+                        <div class="col-lg-12">
+                            <span class="text-primary pointer" onclick="AddAttr()"> <i class="bi bi-plus-circle-fill"></i> Thêm mới thuộc tính</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card mb-3">
+                <div class="card-header">
+                    Thông tin bổ sung
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Danh mục</label>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="floating-label">
+                                <input class="floating-input" type="text" placeholder=" ">
+                                <span class="highlight"></span>
+                                <label>Hastags</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+                $(function () {
+                    var _listAttrs = [];
+                    function CreateListAttrs() {
+                        _listAttrs = []; 
+                        var result = [];
+                        var name = 'Sản phẩm - ';
+                        $.each($('#listAttr').find('.row'), function (i, v) {
+                            var value = $($(v).find('.value')[0]).val().split(','); 
+                            result.push(value);
+                        });
+                        if (result.length == 1) {
+                            $.each(result[0], function (index, value) {
+                                _listAttrs.push(name + value);
+                            })
+                        } else if (result.length == 2) {
+                            $.each(result[0], function (index, value) {
+                                $.each(result[1], function (index, sub) {
+                                    _listAttrs.push(name + value + ' - ' + sub);
+                                })
+                            })
+                        } else if (result.length == 3) {
+                            $.each(result[0], function (index, value) {
+                                $.each(result[1], function (index, sub) {
+                                    $.each(result[2], function (index, sub1) {
+                                        _listAttrs.push(name + value + ' - ' + sub + ' - ' + sub1);
+                                    })
+                                })
+                            })
+                        }
+                        console.log(_listAttrs);
+                    }
+                    $("#listAttr").keyup(function (e) { 
+                        if (e.which == 44) {
+                            CreateListAttrs();
+                        }
+                        setTimeout(function () {
+                            _listAttrs = [];
+                            CreateListAttrs();
+                            RenderTable();
+                        }, 1000);
+                        console.log(_listAttrs); 
+                    });
+                    function RenderTable() {
+                        $('.CountAttr').html('(có ' + _listAttrs.length +' phiên bản)');
+                        var header = `
+                        <div class="table-responsive">
+                                  <table class="table text-nowrap">
+                                    <thead class="table-light">
+                                      <tr>
+                                        <th>
+                                          <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="checkAll">
+                                            <label class="form-check-label" for="checkAll">
+                                            </label>
+                                          </div>
+                                        </th> 
+                                        <th>Tên phiên bản</th>
+                                        <th>Url</th>
+                                        <th>Giá vốn</th>
+                                        <th>Giá bán lẻ</th>
+                                        <th>Giá buôn</th>
+                                        <th>Remove</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody> 
+                        `;
+                        $.each(_listAttrs, function (index, value) {
+                            header += `
+    <td>
+<div class="form-check">
+                                            <!-- input --><input class="form-check-input" type="checkbox" value="" id="chechboxTwo">
+                                            <!-- label --><label class="form-check-label" for="chechboxTwo">
+
+                                            </label>
+                                          </div>
+</td>
+    <td>`+ value +`</td> <td><input type="text" class="form-control" placeholder=""></td>
+                                        <td><input type="text" class="form-control" placeholder=""></td>
+                                        <td><input type="text" class="form-control" placeholder=""></td>
+                                        <td><input type="text" class="form-control" placeholder=""></td>
+                                        <td>Remove</td>
+                                      </tr>
+`;
+                        })
+                        header += ' </tbody></table></div>';
+                        $('#tableAttr').html(header);
+                    }
+                })
+            </script>
+            <div class="card"> 
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            Ngừng bán
+                        </div>
+                        <div class="col-lg-3">
+                            <span class="form-check form-switch" style=" text-align: right; float: right; right: 0px; position: absolute;">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="row mt-1">
+                        <div class="col-lg-9">
+                           Publish website
+                        </div>
+                        <div class="col-lg-3">
+                            <span class="form-check form-switch" style=" text-align: right; float: right; right: 0px; position: absolute;">
+                                <input class="form-check-input" type="checkbox" id="flexSwitchCheckChecked">
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 listAttr">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-lg-9">
+                            Phiên bản <span class="CountAttr"></span>
+                        </div> 
+                    </div>
+                    <div class="row mt-1" id="tableAttr">
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
